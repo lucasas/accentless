@@ -1,1 +1,4 @@
-/*.sw[p]
+.bundle
+Gemfile.lock
+pkg/*
+.*sw[op]
