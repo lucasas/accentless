@@ -1,7 +1,7 @@
 class String
   ACCENTS_MAPPING = {
     'E' => [200,201,202,203],
-    'e' => [232,233,234,235],
+    'e' => [232,233,234,235,7869],
     'A' => [192,193,194,195,196,197],
     'a' => [224,225,226,227,228,229,230],
     'C' => [199],
@@ -26,7 +26,7 @@ class String
     str = String.new(self)
     String::ACCENTS_MAPPING.each {|letter,accents|
       packed = accents.pack('U*')
-      rxp = Regexp.new("[#{packed}]", nil, 'U')
+      rxp = Regexp.new("[#{packed}]", nil)
       str.gsub!(rxp, letter)
     }
 
