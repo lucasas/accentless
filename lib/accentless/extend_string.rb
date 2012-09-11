@@ -32,4 +32,16 @@ class String
 
     str
   end
+
+  def remove_ponctuation
+    str = String.new(self)
+    str.gsub!(/[^\w\s]/,"")
+    str
+  end
+
+  def only_text
+    str = String.new(self)
+    str.remove_accents.remove_ponctuation
+  end
 end
+
