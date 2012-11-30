@@ -34,6 +34,11 @@ class String
   end
 
   def remove_ponctuation
+    warn "[DEPRECATION] Method renamed to remove_punctuation"
+    remove_punctuation
+  end
+
+  def remove_punctuation
     str = String.new(self)
     str.gsub!(/[^\w\s]/,"")
     str
@@ -41,7 +46,7 @@ class String
 
   def only_text
     str = String.new(self)
-    str.remove_accents.remove_ponctuation
+    str.remove_accents.remove_punctuation
   end
 end
 

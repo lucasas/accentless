@@ -11,14 +11,14 @@ describe String do
     "Tẽst".remove_accents.should == "Test"
   end
 
-  describe "remove_ponctuation" do
+  describe "remove_punctuation" do
     it "should remove especial caracters" do
-      "Testing: all! ponctuation?.,'¿! should be removed".remove_ponctuation.should == "Testing all ponctuation should be removed"
+      "Testing: all! punctuation?.,'¿! should be removed".remove_punctuation.should == "Testing all punctuation should be removed"
     end
   end
 
   describe "only_text" do
-    it "should remove accents and ponctuation" do
+    it "should remove accents and punctuation" do
       "Testing: lâmpadas mágicas não existem!".only_text.should == "Testing lampadas magicas nao existem"
     end
   end
