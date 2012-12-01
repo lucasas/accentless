@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    accentless (0.0.1)
+    accentless (0.1.0)
 
 GEM
   remote: http://rubygems.org/
