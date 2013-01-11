@@ -7,6 +7,14 @@ describe String do
     "São Paulo".remove_accents.should == "Sao Paulo"
   end
 
+  it "should remove the most annoying Hungarian accents" do
+    "fejlődő".remove_accents.should == "fejlodo"
+    "FEJLŐDŐ".remove_accents.should == "FEJLODO"
+
+    "fű".remove_accents.should == "fu"
+    "FŰ".remove_accents.should == "FU"
+  end
+
   it "should remove letter 'e' with tilde" do
     "Tẽst".remove_accents.should == "Test"
   end
