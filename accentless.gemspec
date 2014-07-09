@@ -7,9 +7,9 @@ Gem::Specification.new do |s|
   s.version     = Accentless::VERSION
   s.authors     = ["Lucas Souza"]
   s.email       = ["lucasas@gmail.com"]
-  s.homepage    = ""
-  s.summary     = ""
-  s.description = ""
+  s.homepage    = "http://github.com/lucasas/accentless/"
+  s.summary     = %q{Rubygem to removing accents}
+  s.description = %q{Rubygem to removing accents.}
 
   s.rubyforge_project = "accentless"
 
