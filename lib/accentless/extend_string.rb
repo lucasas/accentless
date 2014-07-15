@@ -29,6 +29,10 @@ module Accentless
       end
     end
 
+    def accentless!
+      accentless(self)
+    end
+
     private
 
     def replace(string, letter, accents)

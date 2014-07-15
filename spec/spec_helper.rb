@@ -7,13 +7,18 @@ RSpec.configure do |config|
 end
 
 class Word
+  attr_reader :value
   using Accentless
 
-  def initialize(word)
-    @word = word
+  def initialize(value)
+    @value = value
   end
 
   def accentless
-    @word.accentless
+    @value.accentless
+  end
+
+  def accentless!
+    @value.accentless!
   end
 end
