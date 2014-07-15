@@ -6,3 +6,14 @@ RSpec.configure do |config|
   config.mock_with :rspec
 end
 
+class Word
+  using Accentless
+
+  def initialize(word)
+    @word = word
+  end
+
+  def accentless
+    @word.accentless
+  end
+end

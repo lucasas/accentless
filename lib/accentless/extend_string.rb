@@ -1,4 +1,4 @@
-class String
+module Accentless
   ACCENTS_MAPPING = {
     'E' => [200,201,202,203],
     'e' => [232,233,234,235,7869],
@@ -22,31 +22,20 @@ class String
     'oe' => [189]
   }
 
-  def remove_accents    
-    str = String.new(self)
-    String::ACCENTS_MAPPING.each {|letter,accents|
+  refine String do
+    def accentless(string = String.new(self))
+      string.tap do |s|
+        ACCENTS_MAPPING.each { |letter, accents| replace(s, letter, accents) }
+      end
+    end
+
+    private
+
+    def replace(string, letter, accents)
       packed = accents.pack('U*')
-      rxp = Regexp.new("[#{packed}]", nil)
-      str.gsub!(rxp, letter)
-    }
-
-    str
-  end
-
-  def remove_ponctuation
-    warn "[DEPRECATION] Method renamed to remove_punctuation"
-    remove_punctuation
-  end
-
-  def remove_punctuation
-    str = String.new(self)
-    str.gsub!(/[^\w\s]/,"")
-    str
-  end
-
-  def only_text
-    str = String.new(self)
-    str.remove_accents.remove_punctuation
+      regex = Regexp.new("[#{packed}]", nil)
+      string.gsub!(regex, letter)
+    end
   end
 end
 
