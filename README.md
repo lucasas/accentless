@@ -2,6 +2,9 @@
 
 Remove accents from `String`s easily, using new Ruby 2.x `Refinements`.
 
+## Status
+[![Build Status](https://travis-ci.org/lucasas/accentless.svg?branch=master)](http://travis-ci.org/lucasas/accentless?branch=master)
+
 ## Installation
 
 Add this line to your application's Gemfile:
